@@ -4,7 +4,7 @@ import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 //importando objetos do Salesforce
-import  CONTACT_OBJECT  from '@salesforce/schema/Contact';
+import CONTACT_OBJECT from '@salesforce/schema/Contact';
 import FIRSTNAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
@@ -17,21 +17,17 @@ objectApiName = CONTACT_OBJECT;
 fields = [ FIRSTNAME_FIELD, LASTNAME_FIELD, EMAIL_FIELD];
 
 // criando o manipulador de evento
- handlesuccess() {
+handleSuccess(event) {
 
     // mensagem de notificação de sucesso
     const toastEvent = new ShowToastEvent({
-        title: 'Contato Criado',
-        message: 'ID do Registro: ' + event.detail.id,
-        variant: 'success'
+        title: "Contact created",
+        message: "Record ID: " + event.detail.id,
+        variant: "success"
     });
 
     // disparando a notificação
     this.dispatchEvent(toastEvent);
- }
-
- 
-
-
+  }
 
 }

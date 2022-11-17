@@ -1,9 +1,13 @@
 <template>
     <lightning-card class="slds-p-around_xx-small">
         <!--
-          Inserindo a tag para "puxar" o objeto(Contact) os campos(fields) e o manipulador de evento(handleSuccess)  
+          Inserindo a tag para "puxar" o objeto(Contact) os campos(fields) e 
+          o manipulador de evento(handleSuccess).  
         -->
-        <lightning-record-form object-api-name="Contact" fields={fields} onsuccess={handleSuccess}>
+        <lightning-record-form 
+        object-api-name={objectApiName}
+            fields={fields} 
+            onsuccess={handleSuccess}>
         </lightning-record-form>
     </lightning-card>
 </template>
