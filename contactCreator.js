@@ -28,6 +28,7 @@ handleSuccess(event) {
 
     // disparando a notificação
     this.dispatchEvent(toastEvent);
+    console.log(this);
   }
 
 }
